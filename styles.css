@@ -141,60 +141,55 @@ body {
   fill: #fff;
 }
 
-/* Adjust the layout for mobile (375px width) */
 @media (max-width: 375px) {
   .card {
-    flex-direction: column; /* Stack image on top */
-    width: 100%; /* Full width for mobile */
+    flex-direction: column;
+    width: 100%;
   }
 
   .card-image img {
-    border-radius: 0; /* Remove the border radius */
-    height: auto; /* Let the image resize for mobile */
+    border-radius: 0;
+    height: auto;
   }
 
   .card-content {
-    padding: 1rem; /* Adjust padding for mobile */
-    position: relative; /* Needed for positioning the share container */
+    padding: 1rem;
+    position: relative;
   }
 
-  /* Profile Section */
   .profile {
     display: flex;
-    align-items: center; /* Center items vertically */
-    position: relative; /* Required for absolute positioning of share container */
-    margin-bottom: 20px; /* Space below the profile section */
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
   }
 
-  /* Share Button */
   #share-button {
-    margin-left: auto; /* Push share button to the right */
-    position: absolute; /* Position relative to profile section */
-    right: 10px; /* Space from the right edge */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    z-index: 20; /* Ensure it’s above the icon container */
+    margin-left: auto;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
   }
 
-  /* Share Container */
   #icon-container {
     position: absolute;
-    top: 0; /* Start at the top of the profile section */
-    left: 0; /* Align with the left edge of the profile section */
-    right: 50px; /* Allow space on the right for the share button */
-    bottom: 0; /* Cover the full height of the profile section */
+    top: 0;
+    left: 0;
+    right: 50px;
+    bottom: 0;
     background-color: hsl(217, 19%, 35%);
     border-radius: 5px;
     padding: 10px;
-    display: none; /* Initially hidden */
-    flex-direction: row; /* Align icons horizontally */
-    align-items: center; /* Center icons vertically */
-    justify-content: flex-start; /* Start alignment horizontally */
-    gap: 30px; /* Space between icons */
-    z-index: 10; /* Overlay other content */
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    z-index: 10;
   }
 
-  /* Display the share container when the share button is active */
   #icon-container.active {
     display: flex;
   }
@@ -202,14 +197,14 @@ body {
   #icon-container span {
     color: #fff;
     font-weight: bold;
-    margin-right: 10px; /* Space between text and icons */
-    line-height: 30px; /* Match icon height for vertical alignment */
+    margin-right: 10px;
+    line-height: 30px;
   }
 
   #icon-container svg {
-    width: 30px; /* Icon size */
+    width: 30px;
     height: 30px;
     fill: #fff;
-    vertical-align: middle; /* Align icon vertically with text */
+    vertical-align: middle;
   }
 }
