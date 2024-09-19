@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.card {
+  display: flex;
+  max-width: 42rem;
+  margin: 1.5rem auto;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  flex: 2;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card-content {
+  flex: 3;
+  padding: 1.5rem;
+  overflow: visible;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  color: hsl(217, 19%, 35%);
+  margin-bottom: 10px;
+}
+
+.card-content p.subText {
+  font-size: 13px;
+  color: hsl(214, 17%, 51%);
+  margin-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+#avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 13px;
+  color: hsl(217, 19%, 35%);
+}
+
+.date {
+  font-size: 0.9rem;
+  color: hsl(212, 23%, 69%);
+  margin: 0;
+}
+
+#share-button {
+  width: 1.75rem;
+  height: 1.75rem;
+  border: none;
+  border-radius: 100%;
+  background-color: hsl(210, 46%, 95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#share-button svg {
+  width: 15px;
+  height: 13px;
+  fill: hsl(214, 17%, 51%);
+}
+
+#share-button.active {
+  background-color: hsl(217, 19%, 35%);
+}
+
+#share-button.active svg {
+  fill: #fff;
+}
+
+#icon-container {
+  display: none;
+  gap: 10px;
+  align-items: center;
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background-color: hsl(217, 19%, 35%);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 10;
+}
+
+#icon-container span {
+  color: #fff;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#icon-container svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+/* Adjust the layout for mobile (375px width) */
+@media (max-width: 375px) {
+  .card {
+    flex-direction: column; /* Stack image on top */
+    width: 100%; /* Full width for mobile */
+  }
+
+  .card-image img {
+    border-radius: 0; /* Remove the border radius */
+    height: auto; /* Let the image resize for mobile */
+  }
+
+  .card-content {
+    padding: 1rem; /* Adjust padding for mobile */
+    position: relative; /* Needed for positioning the share container */
+  }
+
+  /* Profile Section */
+  .profile {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    position: relative; /* Required for absolute positioning of share container */
+    margin-bottom: 20px; /* Space below the profile section */
+  }
+
+  /* Share Button */
+  #share-button {
+    margin-left: auto; /* Push share button to the right */
+    position: absolute; /* Position relative to profile section */
+    right: 10px; /* Space from the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    z-index: 20; /* Ensure it’s above the icon container */
+  }
+
+  /* Share Container */
+  #icon-container {
+    position: absolute;
+    top: 0; /* Start at the top of the profile section */
+    left: 0; /* Align with the left edge of the profile section */
+    right: 50px; /* Allow space on the right for the share button */
+    bottom: 0; /* Cover the full height of the profile section */
+    background-color: hsl(217, 19%, 35%);
+    border-radius: 5px;
+    padding: 10px;
+    display: none; /* Initially hidden */
+    flex-direction: row; /* Align icons horizontally */
+    align-items: center; /* Center icons vertically */
+    justify-content: flex-start; /* Start alignment horizontally */
+    gap: 30px; /* Space between icons */
+    z-index: 10; /* Overlay other content */
+  }
+
+  /* Display the share container when the share button is active */
+  #icon-container.active {
+    display: flex;
+  }
+
+  #icon-container span {
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px; /* Space between text and icons */
+    line-height: 30px; /* Match icon height for vertical alignment */
+  }
+
+  #icon-container svg {
+    width: 30px; /* Icon size */
+    height: 30px;
+    fill: #fff;
+    vertical-align: middle; /* Align icon vertically with text */
+  }
+}
